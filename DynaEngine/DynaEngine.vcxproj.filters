@@ -77,5 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="shader.fx" />
+    <FxCompile Include="VertexShader.hlsl">
+      <Filter>App</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>
