@@ -56,7 +56,7 @@
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{ef9d4db7-3d69-4802-86c0-5aafd55629bc}</ProjectGuid>
     <RootNamespace>DynaEngine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

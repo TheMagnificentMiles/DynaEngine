@@ -1,2 +1,12 @@
-﻿  GraphicsEngine.cpp
-  DynaEngine.vcxproj -> C:\Users\miles\Code\DynaEngine\x64\Debug\DynaEngine.exe
+﻿  AppWindow.cpp
+  DeviceContext.cpp
+E:\Code\DynaEngine\DynaEngine\DeviceContext.cpp(42,13): warning C4244: '=': conversion from 'UINT' to 'FLOAT', possible loss of data
+E:\Code\DynaEngine\DynaEngine\DeviceContext.cpp(43,14): warning C4244: '=': conversion from 'UINT' to 'FLOAT', possible loss of data
+  GraphicsEngine.cpp
+  main.cpp
+  SwapChain.cpp
+  VertexBuffer.cpp
+  VertexShader.cpp
+  Window.cpp
+  Generating Code...
+  DynaEngine.vcxproj -> E:\Code\DynaEngine\x64\Debug\DynaEngine.exe
