@@ -25,14 +25,8 @@
     <Filter Include="GameEngine\GraphicsEngine\VertexShader">
       <UniqueIdentifier>{8287b423-77d6-4975-92da-722253ae0939}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameEngine\EngineManagment">
-      <UniqueIdentifier>{1243d19e-80b7-4506-b2f5-3069fc62ec5e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameEngine\EngineManagment\AppValues">
-      <UniqueIdentifier>{5b8df975-c21c-4e18-9678-df9d7a1e6a95}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameEngine\EngineManagment\json">
-      <UniqueIdentifier>{262b4216-9bc3-42d8-a31d-347f12157309}</UniqueIdentifier>
+    <Filter Include="GameEngine\GraphicsEngine\PixelShader">
+      <UniqueIdentifier>{54c05b19-1e01-46f3-a87e-40be3353eae3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -60,11 +54,8 @@
     <ClCompile Include="VertexShader.cpp">
       <Filter>GameEngine\GraphicsEngine\VertexShader</Filter>
     </ClCompile>
-    <ClCompile Include="AppValues.cpp">
-      <Filter>GameEngine\EngineManagment\AppValues</Filter>
-    </ClCompile>
-    <ClCompile Include="json.cpp">
-      <Filter>GameEngine\EngineManagment\json</Filter>
+    <ClCompile Include="PixelShader.cpp">
+      <Filter>GameEngine\GraphicsEngine\PixelShader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,16 +80,15 @@
     <ClInclude Include="VertexShader.h">
       <Filter>GameEngine\GraphicsEngine\VertexShader</Filter>
     </ClInclude>
-    <ClInclude Include="AppValues.h">
-      <Filter>GameEngine\EngineManagment\AppValues</Filter>
-    </ClInclude>
-    <ClInclude Include="json.h">
-      <Filter>GameEngine\EngineManagment\json</Filter>
+    <ClInclude Include="PixelShader.h">
+      <Filter>GameEngine\GraphicsEngine\PixelShader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="shader.fx" />
     <FxCompile Include="VertexShader.hlsl">
+      <Filter>App</Filter>
+    </FxCompile>
+    <FxCompile Include="PixelShader.hlsl">
       <Filter>App</Filter>
     </FxCompile>
   </ItemGroup>

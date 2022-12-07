@@ -19,32 +19,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AppValues.cpp" />
     <ClCompile Include="AppWindow.cpp" />
     <ClCompile Include="DeviceContext.cpp" />
     <ClCompile Include="GraphicsEngine.cpp" />
-    <ClCompile Include="json.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PixelShader.cpp" />
     <ClCompile Include="SwapChain.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="VertexShader.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AppValues.h" />
     <ClInclude Include="AppWindow.h" />
     <ClInclude Include="DeviceContext.h" />
     <ClInclude Include="GraphicsEngine.h" />
-    <ClInclude Include="json.h" />
+    <ClInclude Include="PixelShader.h" />
     <ClInclude Include="SwapChain.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexShader.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="shader.fx">
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      </ShaderType>
+    <FxCompile Include="PixelShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </FxCompile>
     <FxCompile Include="VertexShader.hlsl">

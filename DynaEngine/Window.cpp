@@ -1,5 +1,4 @@
 #include "Window.h"
-#include "AppValues.h"
 
 Window* window = nullptr;
 
@@ -35,7 +34,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
 
 bool Window::init()
 {
-	AppValues appValues;
 	WNDCLASSEX wc;
 	wc.cbClsExtra = NULL;
 	wc.cbSize = sizeof(WNDCLASSEX);
@@ -53,7 +51,7 @@ bool Window::init()
 	if (!::RegisterClassEx(&wc))
 		return false;
 
-	m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, L"MyWindowClass", appValues.app_name, WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 1025, 768, NULL, NULL, NULL, this);
+	m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, L"MyWindowClass", L"DynaEngine", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 1025, 768, NULL, NULL, NULL, this);
 
 	if (!m_hwnd)
 		return false;
