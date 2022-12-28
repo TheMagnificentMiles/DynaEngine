@@ -21,17 +21,62 @@ public:
 	void setTranslation(const Vector3& translation)
 	{
 		setIdentity();
-		m_mat[3][0] = translation.m_x;
-		m_mat[3][1] = translation.m_y;
-		m_mat[3][2] = translation.m_z;
+		m_mat[3][0] = translation.x;
+		m_mat[3][1] = translation.y;
+		m_mat[3][2] = translation.z;
 	}
 
 	void setScale(const Vector3& scale)
 	{
 		setIdentity();
-		m_mat[0][0] = scale.m_x;
-		m_mat[1][1] = scale.m_y;
-		m_mat[2][2] = scale.m_z;
+		m_mat[0][0] = scale.x;
+		m_mat[1][1] = scale.y;
+		m_mat[2][2] = scale.z;
+	}
+
+	void setRotationX(float x)
+	{
+		m_mat[1][1] = cos(x);
+		m_mat[1][2] = sin(x);
+		m_mat[2][1] = -sin(x);
+		m_mat[2][2] = cos(x);
+	}
+
+	void setRotationY(float y)
+	{
+		m_mat[0][0] = cos(y);
+		m_mat[0][2] = -sin(y);
+		m_mat[2][0] = sin(y);
+		m_mat[2][2] = cos(y);
+	}
+
+	void setRotationZ(float z)
+	{
+		m_mat[0][0] = cos(z);
+		m_mat[0][1] = sin(z);
+		m_mat[1][0] = -sin(z);
+		m_mat[1][1] = cos(z);
+	}
+
+	void setRotation(const Vector3& rotation)
+	{
+		Matrix4x4 self;
+		::memcpy(self.m_mat, m_mat, sizeof(float) * 16);
+		Matrix4x4 temp;
+
+		temp.setIdentity();
+		temp.setRotationZ(rotation.z);
+		self *= temp;
+
+		temp.setIdentity();
+		temp.setRotationY(rotation.y);
+		self *= temp;
+
+		temp.setIdentity();
+		temp.setRotationX(rotation.z);
+		self *= temp;
+
+		::memcpy(m_mat, self.m_mat, sizeof(float) * 16);
 	}
 
 	void operator *=(const Matrix4x4& matrix)

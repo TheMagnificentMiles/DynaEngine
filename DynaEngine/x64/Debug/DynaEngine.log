@@ -1,4 +1,1 @@
-﻿  AppWindow.cpp
-C:\Users\miles\Code\DynaEngine\DynaEngine\AppWindow.cpp(31,29): warning C4244: '=': conversion from 'DWORD' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\AppWindow.cpp(42,101): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  DynaEngine.vcxproj -> C:\Users\miles\Code\DynaEngine\x64\Debug\DynaEngine.exe
+﻿  DynaEngine.vcxproj -> C:\Users\miles\Code\DynaEngine\x64\Debug\DynaEngine.exe

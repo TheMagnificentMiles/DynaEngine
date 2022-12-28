@@ -1,26 +1,26 @@
 #pragma once
 
-class Matrix4x4;
-
 class Vector3
 {
 public:
-	Vector3():m_x(0),m_y(0),m_z(0)
+	float x, y, z;
+
+	Vector3():x(0),y(0),z(0)
 	{
 	}
-	Vector3(float x, float y, float z):m_x(x),m_y(y),m_z(z)
+	Vector3(float x, float y, float z):x(x),y(y),z(z)
 	{
 	}
-	Vector3(const Vector3& vector) :m_x(vector.m_x), m_y(vector.m_y), m_z(vector.m_z)
+	Vector3(const Vector3& vector) :x(vector.x), y(vector.y), z(vector.z)
 	{
 	}
 
 	static Vector3 lerp(const Vector3& start, const Vector3& end, float delta) 
 	{
 		Vector3 v;
-		v.m_x = start.m_x * (1.0f - delta) + end.m_x * delta;
-		v.m_y = start.m_y * (1.0f - delta) + end.m_y * delta;
-		v.m_z = start.m_z * (1.0f - delta) + end.m_z * delta;
+		v.x = start.x * (1.0f - delta) + end.x * delta;
+		v.y = start.y * (1.0f - delta) + end.y * delta;
+		v.z = start.z * (1.0f - delta) + end.z * delta;
 
 
 		return v;
@@ -29,10 +29,5 @@ public:
 	~Vector3() 
 	{
 	}
-	
-private:
-	friend class Matrix4x4;
-
-	float m_x, m_y, m_z;
 };
 

@@ -1,0 +1,28 @@
+﻿  AppWindow.cpp
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(39,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(40,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(41,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(42,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(47,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(48,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(49,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(50,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(55,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(56,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(57,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(58,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  ConstantBuffer.cpp
+  DeviceContext.cpp
+C:\Users\miles\Code\DynaEngine\DynaEngine\DeviceContext.cpp(43,13): warning C4244: '=': conversion from 'UINT' to 'FLOAT', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\DeviceContext.cpp(44,14): warning C4244: '=': conversion from 'UINT' to 'FLOAT', possible loss of data
+  GraphicsEngine.cpp
+  IndexBuffer.cpp
+  main.cpp
+  PixelShader.cpp
+  SwapChain.cpp
+  VertexBuffer.cpp
+  VertexShader.cpp
+  Window.cpp
+GraphicsEngine.obj : error LNK2001: unresolved external symbol D3DCompileFromFile
+GraphicsEngine.obj : error LNK2001: unresolved external symbol D3D11CreateDevice
+C:\Users\miles\Code\DynaEngine\x64\Release\DynaEngine.exe : fatal error LNK1120: 2 unresolved externals
