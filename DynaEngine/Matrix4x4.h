@@ -73,7 +73,7 @@ public:
 		self *= temp;
 
 		temp.setIdentity();
-		temp.setRotationX(rotation.z);
+		temp.setRotationX(rotation.x);
 		self *= temp;
 
 		::memcpy(m_mat, self.m_mat, sizeof(float) * 16);

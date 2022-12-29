@@ -1,1 +1,16 @@
-﻿  DynaEngine.vcxproj -> C:\Users\miles\Code\DynaEngine\x64\Debug\DynaEngine.exe
+﻿  AppWindow.cpp
+C:\Users\miles\Code\DynaEngine\DynaEngine\Vector2.h(29,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Vector3.h(29,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(39,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(40,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(41,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(42,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(47,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(48,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(49,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(50,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(55,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(56,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(57,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(58,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  DynaEngine.vcxproj -> C:\Users\miles\Code\DynaEngine\x64\Debug\DynaEngine.exe

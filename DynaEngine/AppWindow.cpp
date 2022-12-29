@@ -1,6 +1,7 @@
 #include "AppWindow.h"
 #include "Vector3.h"
 #include "Matrix4x4.h"
+#include "InputSystem.h"
 
 #include <Windows.h>
 
@@ -26,23 +27,12 @@ void AppWindow::updateQuadPosition()
 {
 	constant cc;
 
-	m_delta_pos += m_delta_time / 10.0f;
-	if (m_delta_pos > 1.0f)
-		m_delta_pos = 0;
-
-	m_delta_scale += m_delta_time / 2.0f;
-
 	Matrix4x4 temp;
 
-	//temp.setTranslation(Vector3::lerp(Vector3(-1.5, -1.5, 0), Vector3(1.5, 1.5, 0), m_delta_pos));
-	//cc.m_world.setScale(Vector3::lerp(Vector3(0.5, 0.5, 0), Vector3(1, 1, 0), (sin(m_delta_scale)+1.0f)/2.0f));
-
-	//cc.m_world *= temp;
-
-	cc.m_world.setScale(Vector3(1, 1, 1));
+	cc.m_world.setScale(Vector3(m_scale));
 
 	temp.setIdentity();
-	temp.setRotation(Vector3(m_delta_scale, m_delta_scale, m_delta_scale));
+	temp.setRotation(Vector3(m_rot_x, m_rot_y, 0.0f));
 	cc.m_world *= temp;
 
 	cc.m_view.setIdentity();
@@ -56,7 +46,6 @@ void AppWindow::updateQuadPosition()
 	m_cb->update(GraphicsEngine::get()->getImmediateDeviceContext(), &cc);
 }
 
-
 AppWindow::~AppWindow()
 {
 }
@@ -64,6 +53,9 @@ AppWindow::~AppWindow()
 void AppWindow::onCreate()
 {
 	Window::onCreate();
+
+	InputSystem::get()->addListener(this);
+
 	GraphicsEngine::get()->init();
 	m_swap_chain = GraphicsEngine::get()->createSwapChain();
 
@@ -118,6 +110,9 @@ void AppWindow::onCreate()
 void AppWindow::onUpdate()
 {
 	Window::onUpdate();
+
+	InputSystem::get()->update();
+
 	GraphicsEngine::get()->getImmediateDeviceContext()->clearRenderTargetColor(this->m_swap_chain, 0, 0, 0, 1);
 	RECT rc = this->getClientWindowRect();
 	GraphicsEngine::get()->getImmediateDeviceContext()->setViewportSize(rc.right - rc.left, rc.bottom - rc.top);
@@ -153,4 +148,63 @@ void AppWindow::onDestroy()
 
 	m_swap_chain->release();
 	GraphicsEngine::get()->release();
+}
+
+void AppWindow::onFocus()
+{
+	InputSystem::get()->addListener(this);
+}
+
+void AppWindow::onLoseFocus()
+{
+	InputSystem::get()->removeListener(this);
+}
+
+void AppWindow::onKeyDown(int key)
+{
+	
+}
+
+void AppWindow::whileKeyDown(int key)
+{
+	if (key == 'W') { m_rot_x += 0.707f * m_delta_time; }
+	else if (key == 'S') { m_rot_x -= 0.707f * m_delta_time; }
+	else if (key == 'A') { m_rot_y += 0.707f * m_delta_time; }
+	else if (key == 'D') { m_rot_y -= 0.707f * m_delta_time; }
+}
+
+void AppWindow::onKeyUp(int key)
+{
+}
+
+void AppWindow::onMouseMove(const Vector2& delta_mouse_pos)
+{
+	m_rot_x -= delta_mouse_pos.y * m_delta_time;
+	m_rot_y -= delta_mouse_pos.x * m_delta_time;
+}
+
+void AppWindow::onLeftMouseDown(const Vector2& delta_mouse_pos)
+{
+	m_scale += 1;
+}
+
+void AppWindow::whileLeftMouseDown(const Vector2& delta_mouse_pos)
+{
+}
+
+void AppWindow::onLeftMouseUp(const Vector2& delta_mouse_pos)
+{
+}
+
+void AppWindow::onRightMouseDown(const Vector2& delta_mouse_pos)
+{
+	m_scale -= 1;
+}
+
+void AppWindow::whileRightMouseDown(const Vector2& delta_mouse_pos)
+{
+}
+
+void AppWindow::onRightMouseUp(const Vector2& delta_mouse_pos)
+{
 }

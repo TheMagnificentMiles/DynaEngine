@@ -17,6 +17,9 @@ public:
 	virtual void onUpdate();
 	virtual void onDestroy();
 
+	virtual void onFocus();
+	virtual void onLoseFocus();
+
 	~Window();
 protected:
 	HWND m_hwnd;
