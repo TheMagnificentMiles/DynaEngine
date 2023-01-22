@@ -1,12 +1,15 @@
 #include "InputSystem.h"
 #include <Windows.h>
 
+InputSystem* InputSystem::m_system = nullptr;
+
 InputSystem::InputSystem()
 {
 }
 
 InputSystem::~InputSystem()
 {
+	InputSystem::m_system = nullptr;
 }
 
 void InputSystem::update()
@@ -116,6 +119,23 @@ void InputSystem::setCursorVisibility(bool visibility)
 
 InputSystem* InputSystem::get()
 {
-	static InputSystem system;
-	return &system;
+	return m_system;
+}
+
+void InputSystem::create()
+{
+	if (InputSystem::m_system)
+	{
+		throw std::exception("Already created InputSystems");
+	}
+	InputSystem::m_system = new InputSystem();
+}
+
+void InputSystem::release()
+{
+	if (!InputSystem::m_system)
+	{
+		return;
+	}
+	delete InputSystem::m_system;
 }

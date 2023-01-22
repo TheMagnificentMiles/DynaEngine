@@ -70,10 +70,8 @@ void AppWindow::onCreate()
 
 	InputSystem::get()->addListener(this);
 
-	GraphicsEngine::get()->init();
-
 	RECT rc = this->getClientWindowRect();
-	m_swap_chain = GraphicsEngine::get()->getRenderSystem()->createSwapChain(this->m_hwnd, rc.right - rc.left, rc.bottom - rc.top);
+	m_swap_chain=GraphicsEngine::get()->getRenderSystem()->createSwapChain(this->m_hwnd, rc.right - rc.left, rc.bottom - rc.top);
 
 	m_world_cam.setTranslation(Vector3(0, 0, -2));
 
@@ -151,19 +149,18 @@ void AppWindow::onUpdate()
 void AppWindow::onDestroy()
 {
 	Window::onDestroy();
-	GraphicsEngine::get()->release();
 }
 
 void AppWindow::onFocus()
 {
 	InputSystem::get()->addListener(this);
-	InputSystem::get()->setCursorVisibility(false);
+	InputSystem::get()->setCursorVisibility(true);
 }
 
 void AppWindow::onLoseFocus()
 {
 	InputSystem::get()->removeListener(this);
-	InputSystem::get()->setCursorVisibility(true);
+	InputSystem::get()->setCursorVisibility(false);
 }
 
 void AppWindow::onKeyDown(int key)
