@@ -9,6 +9,7 @@
 #include "VertexShader.h"
 #include "PixelShader.h"
 #include "InputListener.h"
+#include "Matrix4x4.h"
 #include "Vector2.h"
 
 class AppWindow: public Window, public InputListener
@@ -16,7 +17,7 @@ class AppWindow: public Window, public InputListener
 public:
 	AppWindow();
 
-	void updateQuadPosition();
+	void update();
 
 	~AppWindow();
 
@@ -30,14 +31,14 @@ public:
 	virtual void whileKeyDown(int key) override;
 	virtual void onKeyUp(int key) override;
 
-	virtual void onMouseMove(const Vector2& delta_mouse_pos) override;
+	virtual void onMouseMove(const Vector2& mouse_pos) override;
 
-	virtual void onLeftMouseDown(const Vector2& delta_mouse_pos);
-	virtual void whileLeftMouseDown(const Vector2& delta_mouse_pos);
-	virtual void onLeftMouseUp(const Vector2& delta_mouse_pos);
-	virtual void onRightMouseDown(const Vector2& delta_mouse_pos);
-	virtual void whileRightMouseDown(const Vector2& delta_mouse_pos);
-	virtual void onRightMouseUp(const Vector2& delta_mouse_pos);
+	virtual void onLeftMouseDown(const Vector2& mouse_pos);
+	virtual void whileLeftMouseDown(const Vector2& mouse_pos);
+	virtual void onLeftMouseUp(const Vector2& mouse_pos);
+	virtual void onRightMouseDown(const Vector2& mouse_pos);
+	virtual void whileRightMouseDown(const Vector2& mouse_pos);
+	virtual void onRightMouseUp(const Vector2& mouse_pos);
 
 private:
 	long m_old_delta;
@@ -48,6 +49,13 @@ private:
 
 	float m_rot_x = 0.0f;
 	float m_rot_y = 0.0f;
+
+	float m_forward = 0.0f;
+	float m_sideward = 0.0f;
+
+	bool m_focused = true;
+
+	Matrix4x4 m_world_cam;
 
 	SwapChain* m_swap_chain;
 	VertexBuffer* m_vb;

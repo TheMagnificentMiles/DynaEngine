@@ -40,6 +40,16 @@ public:
 		return v;
 	}
 
+	Vector3 operator * (float num) 
+	{
+		return Vector3(x * num, y * num, z * num);
+	}
+
+	Vector3 operator + (Vector3 vec)
+	{
+		return Vector3(x + vec.x, y + vec.y, z + vec.z);
+	}
+
 	~Vector3() 
 	{
 	}

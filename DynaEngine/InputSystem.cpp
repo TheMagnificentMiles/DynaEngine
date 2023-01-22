@@ -16,8 +16,8 @@ void InputSystem::update()
 
 	if (m_first_time)
 	{
-		m_first_time = false;
 		m_old_mouse_pos = Vector2(current_mouse_pos.x, current_mouse_pos.y);
+		m_first_time = false;
 	}
 
 	if (current_mouse_pos.x != m_old_mouse_pos.x || current_mouse_pos.y != m_old_mouse_pos.y)
@@ -26,7 +26,7 @@ void InputSystem::update()
 
 		while (it != m_set_listeners.end())
 		{
-			(*it)->onMouseMove(Vector2(current_mouse_pos.x - m_old_mouse_pos.x, current_mouse_pos.y - m_old_mouse_pos.y));
+			(*it)->onMouseMove(Vector2(current_mouse_pos.x, current_mouse_pos.y));
 			++it;
 		}
 	}
@@ -102,6 +102,16 @@ void InputSystem::addListener(InputListener* listener)
 void InputSystem::removeListener(InputListener* listener)
 {
 	m_set_listeners.erase(listener);
+}
+
+void InputSystem::setCursorPosition(const Vector2& pos)
+{
+	::SetCursorPos(pos.x, pos.y);
+}
+
+void InputSystem::setCursorVisibility(bool visibility)
+{
+	::ShowCursor(visibility);
 }
 
 InputSystem* InputSystem::get()

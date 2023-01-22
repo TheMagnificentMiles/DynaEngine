@@ -14,6 +14,9 @@ public:
 	void addListener(InputListener* listener);
 	void removeListener(InputListener* listener);
 
+	void setCursorPosition(const Vector2& pos);
+	void setCursorVisibility(bool visibility);
+
 	static InputSystem* get();
 
 private:
