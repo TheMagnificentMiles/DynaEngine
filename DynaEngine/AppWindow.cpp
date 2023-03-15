@@ -1,5 +1,6 @@
 #include "AppWindow.h"
 #include "Vector3.h"
+#include "Vector2.h"
 #include "Matrix4x4.h"
 #include "InputSystem.h"
 
@@ -8,7 +9,7 @@
 struct vertex
 {
 	Vector3 position;
-	Vector3 color;
+	Vector2 texcoord;
 };
 
 __declspec(align(16))
@@ -75,16 +76,57 @@ void AppWindow::onCreate()
 
 	m_world_cam.setTranslation(Vector3(0, 0, -2));
 
+	Vector3 position_list[] =
+	{
+		{ Vector3(-0.5f,-0.5f,-0.5f) },
+		{ Vector3(-0.5f, 0.5f,-0.5f) },
+		{ Vector3(0.5f, 0.5f,-0.5f) },
+		{ Vector3(0.5f,-0.5f,-0.5f) },
+		{ Vector3(0.5f,-0.5f, 0.5f) },
+		{ Vector3(0.5f, 0.5f, 0.5f) },
+		{ Vector3(-0.5f, 0.5f, 0.5f) },
+		{ Vector3(-0.5f,-0.5f, 0.5f) }
+	};
+
+	Vector2 texcoord_list[] =
+	{
+		{ Vector2(0.0f, 0.0f) },
+		{ Vector2(0.0f, 1.0f) },
+		{ Vector2(1.0f, 0.0f) },
+		{ Vector2(1.0f, 1.0f) }
+	};
+	
 	vertex vertex_list[] =
 	{
-		{Vector3(-0.5f,-0.5f,-0.5f), Vector3(1.0f,1.0f,1.0f)},
-		{Vector3(-0.5f, 0.5f,-0.5f), Vector3(0.3f,0.3f,0.3f)},
-		{Vector3( 0.5f, 0.5f,-0.5f), Vector3(1.0f,1.0f,1.0f)},
-		{Vector3( 0.5f,-0.5f,-0.5f), Vector3(0.3f,0.3f,0.3f)},
-		{Vector3( 0.5f,-0.5f, 0.5f), Vector3(1.0f,1.0f,1.0f)},
-		{Vector3( 0.5f, 0.5f, 0.5f), Vector3(0.3f,0.3f,0.3f)},
-		{Vector3(-0.5f, 0.5f, 0.5f), Vector3(1.0f,1.0f,1.0f)},
-		{Vector3(-0.5f,-0.5f, 0.5f), Vector3(0.3f,0.3f,0.3f)},
+		{ position_list[0], texcoord_list[1] },
+		{ position_list[1], texcoord_list[0] },
+		{ position_list[2], texcoord_list[2] },
+		{ position_list[3], texcoord_list[3] },
+
+		{ position_list[4], texcoord_list[1] },
+		{ position_list[5], texcoord_list[0] },
+		{ position_list[6], texcoord_list[2] },
+		{ position_list[7], texcoord_list[3] },
+
+		{ position_list[1], texcoord_list[1] },
+		{ position_list[6], texcoord_list[0] },
+		{ position_list[5], texcoord_list[2] },
+		{ position_list[2], texcoord_list[3] },
+
+		{ position_list[7], texcoord_list[1] },
+		{ position_list[0], texcoord_list[0] },
+		{ position_list[3], texcoord_list[2] },
+		{ position_list[4], texcoord_list[3] },
+
+		{ position_list[3], texcoord_list[1] },
+		{ position_list[2], texcoord_list[0] },
+		{ position_list[5], texcoord_list[2] },
+		{ position_list[4], texcoord_list[3] },
+
+		{ position_list[7], texcoord_list[1] },
+		{ position_list[6], texcoord_list[0] },
+		{ position_list[1], texcoord_list[2] },
+		{ position_list[0], texcoord_list[3] },
 	};
 
 	UINT size_vertex_list = ARRAYSIZE(vertex_list);
@@ -98,7 +140,23 @@ void AppWindow::onCreate()
 
 	unsigned int index_list[] =
 	{
-		0, 1, 2, 2, 3, 0, 4, 5, 6, 6, 7, 4, 1, 6, 5, 5, 2, 1, 7, 0, 3, 3, 4, 7, 3, 2, 5, 5, 4, 3, 7, 6, 1, 1, 0, 7
+		0, 1, 2,
+		2, 3, 0, 
+		
+		4, 5, 6, 
+		6, 7, 4, 
+		
+		8, 9, 10, 
+		10, 11, 8, 
+		
+		12, 13, 14, 
+		14, 15, 12, 
+		
+		16, 17, 18, 
+		18, 19, 16, 
+		
+		20, 21, 22, 
+		22, 23, 20
 	};
 
 	UINT size_index_list = ARRAYSIZE(index_list);
