@@ -69,7 +69,7 @@ public:
 		Matrix4x4 temp;
 
 		temp.setIdentity();
-		temp.setRotationZ(rotation.z);
+		temp.setRotationX(rotation.x);
 		self *= temp;
 
 		temp.setIdentity();
@@ -77,7 +77,7 @@ public:
 		self *= temp;
 
 		temp.setIdentity();
-		temp.setRotationX(rotation.x);
+		temp.setRotationZ(rotation.z);
 		self *= temp;
 
 		::memcpy(m_mat, self.m_mat, sizeof(float) * 16);

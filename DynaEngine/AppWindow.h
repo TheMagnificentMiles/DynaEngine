@@ -63,5 +63,7 @@ private:
 	VertexShaderPtr m_vs;
 	PixelShaderPtr m_ps;
 	ConstantBufferPtr m_cb;
+	TexturePtr m_wood_tex;
+	MeshPtr m_mesh;
 };
 

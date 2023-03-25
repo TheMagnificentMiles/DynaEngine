@@ -1,78 +1,8 @@
 ﻿  AppWindow.cpp
-C:\Users\miles\Code\DynaEngine\DynaEngine\Vector2.h(29,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Vector3.h(29,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(38,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(39,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(40,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(41,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(46,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(47,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(48,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(49,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(54,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(55,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(56,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(57,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(127,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(128,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(129,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(130,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(171,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\AppWindow.cpp(196,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\AppWindow.cpp(196,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  ConstantBuffer.cpp
-  DeviceContext.cpp
-C:\Users\miles\Code\DynaEngine\DynaEngine\DeviceContext.cpp(44,13): warning C4244: '=': conversion from 'UINT' to 'FLOAT', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\DeviceContext.cpp(45,14): warning C4244: '=': conversion from 'UINT' to 'FLOAT', possible loss of data
-  GraphicsEngine.cpp
-  IndexBuffer.cpp
-  InputSystem.cpp
-C:\Users\miles\Code\DynaEngine\DynaEngine\Vector2.h(29,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(22,67): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(22,46): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(32,69): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(32,48): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(37,66): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(37,45): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(53,77): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(53,56): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(57,78): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(57,57): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(72,74): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(72,53): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(74,75): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(74,54): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(87,79): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(87,58): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(89,80): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(89,59): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(112,27): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\InputSystem.cpp(112,20): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-  main.cpp
-C:\Users\miles\Code\DynaEngine\DynaEngine\Vector2.h(29,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Vector3.h(29,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(38,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(39,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(40,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(41,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(46,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(47,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(48,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(49,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(54,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(55,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(56,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(57,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(127,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(128,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(129,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(130,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\Code\DynaEngine\DynaEngine\Matrix4x4.h(171,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  PixelShader.cpp
-  RenderSystem.cpp
-  SwapChain.cpp
-  VertexBuffer.cpp
-  VertexShader.cpp
-  Window.cpp
-  Generating Code...
-  DynaEngine.vcxproj -> C:\Users\miles\Code\DynaEngine\x64\Debug\DynaEngine.exe
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(127,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(128,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(129,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(130,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\AppWindow.cpp(175,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\AppWindow.cpp(175,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  DynaEngine.vcxproj -> E:\Code\DynaEngine\x64\Debug\DynaEngine.exe
