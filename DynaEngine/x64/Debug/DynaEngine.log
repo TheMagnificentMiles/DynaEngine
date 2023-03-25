@@ -1,2 +1,19 @@
-﻿  Window.cpp
+﻿  AppWindow.cpp
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(127,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(128,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(129,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(130,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\AppWindow.cpp(198,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\AppWindow.cpp(198,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GraphicsEngine.cpp
+  Resource.cpp
+  ResourceManager.cpp
+  Texture.cpp
+  TextureManager.cpp
+  main.cpp
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(127,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(128,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(129,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(130,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   DynaEngine.vcxproj -> E:\Code\DynaEngine\x64\Debug\DynaEngine.exe
