@@ -71,6 +71,8 @@ void AppWindow::onCreate()
 
 	InputSystem::get()->addListener(this);
 
+	TexturePtr m_wood_tex = GraphicsEngine::get()->getTextureManager()->createTextureFromFile(L"Assets\\Textures\\crate.jpg");
+
 	RECT rc = this->getClientWindowRect();
 	m_swap_chain=GraphicsEngine::get()->getRenderSystem()->createSwapChain(this->m_hwnd, rc.right - rc.left, rc.bottom - rc.top);
 
@@ -212,13 +214,13 @@ void AppWindow::onDestroy()
 void AppWindow::onFocus()
 {
 	InputSystem::get()->addListener(this);
-	InputSystem::get()->setCursorVisibility(true);
+	InputSystem::get()->setCursorVisibility(false);
 }
 
 void AppWindow::onLoseFocus()
 {
 	InputSystem::get()->removeListener(this);
-	InputSystem::get()->setCursorVisibility(false);
+	InputSystem::get()->setCursorVisibility(true);
 }
 
 void AppWindow::onKeyDown(int key)
