@@ -49,6 +49,7 @@ private:
 
 	float m_rot_x = 0.0f;
 	float m_rot_y = 0.0f;
+	float m_light_rot = 0.0f;
 
 	float m_forward = 0.0f;
 	float m_sideward = 0.0f;

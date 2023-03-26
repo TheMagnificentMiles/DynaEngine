@@ -3,6 +3,6 @@ E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(127,42): warning C4244: '=': conversio
 E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(128,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(129,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 E:\Code\DynaEngine\DynaEngine\Matrix4x4.h(130,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Code\DynaEngine\DynaEngine\AppWindow.cpp(175,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Code\DynaEngine\DynaEngine\AppWindow.cpp(175,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\AppWindow.cpp(187,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Code\DynaEngine\DynaEngine\AppWindow.cpp(187,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   DynaEngine.vcxproj -> E:\Code\DynaEngine\x64\Debug\DynaEngine.exe

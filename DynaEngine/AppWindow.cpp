@@ -18,6 +18,8 @@ struct constant
 	Matrix4x4 m_world;
 	Matrix4x4 m_view;
 	Matrix4x4 m_proj;
+	Vector4 m_light_direction;
+	Vector4 m_camera_position;
 };
 
 AppWindow::AppWindow()
@@ -29,6 +31,14 @@ void AppWindow::update()
 	constant cc;
 
 	Matrix4x4 temp;
+
+	Matrix4x4 m_light_rot_matrix;
+	m_light_rot_matrix.setIdentity();
+	m_light_rot_matrix.setRotation(Vector3(0.0f, m_light_rot, 0.0f));
+
+	m_light_rot += 0.3f * m_delta_time;
+
+	cc.m_light_direction = m_light_rot_matrix.getZDirection();
 
 	cc.m_world.setIdentity();
 
@@ -44,6 +54,8 @@ void AppWindow::update()
 	new_pos = new_pos + world_cam.getXDirection() * (m_sideward * 0.1f);
 
 	world_cam.setTranslation(new_pos);
+
+	cc.m_camera_position = new_pos;
 
 	m_world_cam = world_cam;
 
@@ -72,7 +84,7 @@ void AppWindow::onCreate()
 	InputSystem::get()->addListener(this);
 	InputSystem::get()->setCursorVisibility(false);
 
-	m_wood_tex = GraphicsEngine::get()->getTextureManager()->createTextureFromFile(L"Assets\\Textures\\white.png");
+	m_wood_tex = GraphicsEngine::get()->getTextureManager()->createTextureFromFile(L"Assets\\Textures\\brick.png");
 	m_mesh = GraphicsEngine::get()->getMeshManager()->createMeshFromFile(L"Assets\\Meshes\\Monk.obj");
 
 	RECT rc = this->getClientWindowRect();

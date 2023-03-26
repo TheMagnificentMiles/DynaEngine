@@ -1,5 +1,6 @@
 #pragma once
 #include <math.h>
+#include "Vector3.h"
 
 class Vector4
 {
@@ -16,6 +17,9 @@ public:
 	{
 	}
 	Vector4(const Vector4& vector) :x(vector.x), y(vector.y), z(vector.z), w(vector.w)
+	{
+	}
+	Vector4(const Vector3& vector) :x(vector.x), y(vector.y), z(vector.z), w(1.0f)
 	{
 	}
 
