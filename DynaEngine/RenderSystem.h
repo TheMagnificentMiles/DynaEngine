@@ -11,6 +11,7 @@ public:
 	bool compileVertexShader(const wchar_t* file_name, const char* entry_point_name, void** shader_byte_code, size_t* byte_code_size);
 	bool compilePixelShader(const wchar_t* file_name, const char* entry_point_name, void** shader_byte_code, size_t* byte_code_size);
 	void releaseCompiledShader();
+	void setRasterizerState(bool cull_none);
 
 	SwapChainPtr createSwapChain(HWND hwnd, UINT width, UINT height);
 	DeviceContextPtr getImmediateDeviceContext();
@@ -21,6 +22,8 @@ public:
 	PixelShaderPtr createPixelShader(const void* shader_byte_code, size_t byte_code_size);
 
 private:
+	void initRasterizerState();
+
 	DeviceContextPtr m_imm_device_context;
 	ID3D11Device* m_d3d_device;
 	D3D_FEATURE_LEVEL m_feature_level;
@@ -32,6 +35,8 @@ private:
 	ID3DBlob* m_blob = nullptr;
 	ID3DBlob* m_vsblob = nullptr;
 	ID3DBlob* m_psblob = nullptr;
+	ID3D11RasterizerState* m_cull_none_state = nullptr;
+	ID3D11RasterizerState* m_cull_back_state = nullptr;
 	ID3D11VertexShader* m_vs = nullptr;
 	ID3D11PixelShader* m_ps = nullptr;
 
