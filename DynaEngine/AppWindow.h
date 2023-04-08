@@ -23,6 +23,7 @@ public:
 	virtual void onDestroy() override;
 	virtual void onFocus() override;
 	virtual void onLoseFocus() override;
+	virtual void onResize() override;
 
 	virtual void onKeyDown(int key) override;
 	virtual void whileKeyDown(int key) override;
@@ -37,6 +38,7 @@ public:
 	virtual void whileRightMouseDown(const Vector2& mouse_pos);
 	virtual void onRightMouseUp(const Vector2& mouse_pos);
 
+	void render();
 	void update();
 	void updateModel();
 	void updateCamera();
@@ -56,6 +58,8 @@ private:
 	float m_sideward = 0.0f;
 
 	bool m_focused = true;
+	bool m_play_state = true;
+	bool m_fullscreen_state = false;
 
 	Matrix4x4 m_world_cam;
 	Matrix4x4 m_view_cam;

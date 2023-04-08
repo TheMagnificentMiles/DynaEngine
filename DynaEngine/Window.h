@@ -9,9 +9,11 @@ public:
 	bool isRun();
 
 	RECT getClientWindowRect();
+	RECT getScreenSize();
 
 	virtual void onCreate();
 	virtual void onUpdate();
+	virtual void onResize();
 	virtual void onDestroy();
 
 	virtual void onFocus();

@@ -26,6 +26,26 @@ AppWindow::AppWindow()
 {
 }
 
+void AppWindow::render()
+{
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->clearRenderTargetColor(this->m_swap_chain, 0, 0, 0, 1);
+	RECT rc = this->getClientWindowRect();
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setViewportSize(rc.right - rc.left, rc.bottom - rc.top);
+
+	update();
+
+	GraphicsEngine::get()->getRenderSystem()->setRasterizerState(false);
+
+	drawMesh(m_mesh, m_vs, m_ps, m_cb, m_wood_tex);
+	drawMesh(m_sky_mesh, m_vs, m_sky_ps, m_sky_cb, m_sky_tex);
+
+	m_swap_chain->present(true);
+
+	m_old_delta = m_new_delta;
+	m_new_delta = ::GetTickCount();
+	m_delta_time = (m_old_delta) ? ((m_new_delta - m_old_delta) / 1000.0f) : 0;
+}
+
 void AppWindow::update()
 {
 	updateCamera();
@@ -120,6 +140,7 @@ void AppWindow::onCreate()
 	Window::onCreate();
 
 	InputSystem::get()->addListener(this);
+
 	InputSystem::get()->setCursorVisibility(false);
 
 	m_wood_tex = GraphicsEngine::get()->getTextureManager()->createTextureFromFile(L"Assets\\Textures\\brick.png");
@@ -157,30 +178,14 @@ void AppWindow::onCreate()
 void AppWindow::onUpdate()
 {
 	Window::onUpdate();
-
 	InputSystem::get()->update();
-
-	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->clearRenderTargetColor(this->m_swap_chain, 0, 0, 0, 1);
-	RECT rc = this->getClientWindowRect();
-	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setViewportSize(rc.right - rc.left, rc.bottom - rc.top);
-	
-	update();
-
-	GraphicsEngine::get()->getRenderSystem()->setRasterizerState(false);
-
-	drawMesh(m_mesh, m_vs, m_ps, m_cb, m_wood_tex);
-	drawMesh(m_sky_mesh, m_vs, m_sky_ps, m_sky_cb, m_sky_tex);
-
-	m_swap_chain->present(true);
-
-	m_old_delta = m_new_delta;
-	m_new_delta = ::GetTickCount();
-	m_delta_time = (m_old_delta)?((m_new_delta - m_old_delta) / 1000.0f):0;
+	this->render();
 }
 
 void AppWindow::onDestroy()
 {
 	Window::onDestroy();
+	m_swap_chain->setFullScreen(false, 1, 1);
 }
 
 void AppWindow::onFocus()
@@ -193,12 +198,33 @@ void AppWindow::onLoseFocus()
 	InputSystem::get()->removeListener(this);
 }
 
+void AppWindow::onResize()
+{
+	RECT rc = this->getClientWindowRect();
+	m_swap_chain->resize(rc.right, rc.bottom);
+	this->render();
+}
+
 void AppWindow::onKeyDown(int key)
 {
 	if (key == 'W') { m_forward += 1.0f; }
-	else if (key == 'S') { m_forward -= 1.0f; }
-	else if (key == 'A') { m_sideward -= 1.0f; }
-	else if (key == 'D') { m_sideward += 1.0f; }
+	if (key == 'S') { m_forward -= 1.0f; }
+	if (key == 'A') { m_sideward -= 1.0f; }
+	if (key == 'D') { m_sideward += 1.0f; }
+	if (key == VK_ESCAPE)
+	{ 
+		m_play_state = !m_play_state; 
+
+		InputSystem::get()->setCursorVisibility(!m_play_state);
+	}
+	if (key == 'F') 
+	{
+		m_fullscreen_state = !m_fullscreen_state;
+
+		RECT size_screen = this->getScreenSize();
+
+		m_swap_chain->setFullScreen(m_fullscreen_state, size_screen.right, size_screen.bottom);
+	}
 }
 
 void AppWindow::whileKeyDown(int key)
@@ -208,13 +234,18 @@ void AppWindow::whileKeyDown(int key)
 void AppWindow::onKeyUp(int key)
 {
 	if (key == 'W') { m_forward -= 1.0f; }
-	else if (key == 'S') { m_forward += 1.0f; }
-	else if (key == 'A') { m_sideward += 1.0f; }
-	else if (key == 'D') { m_sideward -= 1.0f; }
+	if (key == 'S') { m_forward += 1.0f; }
+	if (key == 'A') { m_sideward += 1.0f; }
+	if (key == 'D') { m_sideward -= 1.0f; }
 }
 
 void AppWindow::onMouseMove(const Vector2& mouse_pos)
 {
+	if (!m_play_state) 
+	{
+		return;
+	}
+
 	RECT windowRect = this->getClientWindowRect();
 
 	int width = (windowRect.right - windowRect.left);

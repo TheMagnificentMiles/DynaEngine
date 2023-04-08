@@ -19,6 +19,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
 		}
 		break;
 	}
+	case WM_SIZE:
+	{
+		Window* window = (Window*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
+		if (window)
+		{
+			window->onResize();
+		}
+		break;
+	}
 	case WM_KILLFOCUS:
 	{
 		Window* window = (Window*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
@@ -30,6 +39,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
 		Window* window = (Window*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
 		window->onDestroy();
 		::PostQuitMessage(0);
+		break;
+	}
+	case WM_GETMINMAXINFO:
+	{
+		LPMINMAXINFO minmax = (LPMINMAXINFO)lparam;
+		minmax->ptMinTrackSize.x = 240;
+		minmax->ptMinTrackSize.y = 135;
 		break;
 	}
 	default:
@@ -114,11 +130,23 @@ RECT Window::getClientWindowRect()
 	return rc;
 }
 
+RECT Window::getScreenSize()
+{
+	RECT rc;
+	rc.right = ::GetSystemMetrics(SM_CXSCREEN);
+	rc.bottom = ::GetSystemMetrics(SM_CYSCREEN);
+	return rc;
+}
+
 void Window::onCreate()
 {
 }
 
 void Window::onUpdate()
+{
+}
+
+void Window::onResize()
 {
 }
 
